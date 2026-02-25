@@ -1,0 +1,9 @@
+{
+  "app_name": "SLS_ROBUSTER",
+  "latest_version": "1.4.c",
+  "version_code": 10403,
+  "release_date": "2026-02-25",
+  "download_url_macos": "https://github.com/YOURNAME/sls-robuster-updates/releases/download/v1.4.c/SLS_ROBUSTER_v1.4.c.zip",
+  "changelog_url": "https://raw.githubusercontent.com/YOURNAME/sls-robuster-updates/main/CHANGELOG.txt",
+  "notes": "Latest update available."
+}
