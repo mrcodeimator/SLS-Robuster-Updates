@@ -1,0 +1,37 @@
+SLS_ROBUSTER v1.4.c
+-------------------
+
+Bug Fixes
+
+Fixed a crash that happened because the app was trying to use a tab feature that the UI library doesn't actually support.
+Fixed another minor crash related to button sizing inside tabs.
+The date dropdown now always shows today's date at the top, instead of sorting everything alphabetically (which buried today's date in the middle).
+Cleaned up some sloppy logic that was trying to detect what type of operation was happening by checking partial text matches — it now checks for exact operation names instead, which is more accurate.
+Removed a redundant block of code that was looking up recent uploads twice when it only needed to do it once.
+
+Under the Hood
+
+Version number and file names updated to v1.4.c.
+The app now reads channel IDs and your client secret filename from a config file (app_config.json) instead of having them hardcoded in the source code — easier to configure without touching the code.
+When your YouTube login token expires, the app now tries to silently refresh it in the background before asking you to log in again.
+Errors that were previously swallowed silently now get logged as warnings so you can actually see what went wrong.
+App startup code was reorganized so the window-building logic is split into clearly labeled sections (header, status bar, tabs, console) instead of one giant block.
+Channel list management was cleaned up so you no longer need to restart the app after changing your channel settings.
+Duplicate-removal logic was consolidated into one shared helper function.
+
+Visual & UI Changes
+
+Colors, fonts, and spacing now use shared named constants throughout the app, so the styling is consistent everywhere.
+Added reusable builder functions for dropdowns and text fields to cut down on repeated styling code.
+Fonts are now named and defined once instead of being created inline every time they're used.
+New: The Title + Archive tab can now auto-generate a thumbnail preview (1280×720) using your class title and subtitle, and upload it to the stream when you hit Apply Change.
+Stream Info tab rows (Video ID, URL, Title, Start Time) now have a consistent pill-style visual treatment.
+The status line in the Stream Info tab is now in a dedicated framed area so "Idle" and "Done" look intentional rather than like leftover text.
+The "What's New?" button in the header has been renamed to "Updates" and resized to match the Settings gear button.
+The Apply Change button is now styled as the primary action (blue, larger, rounded), and Recover Missed Streams is styled as secondary.
+The Recover Missed Streams popup now shows a cleaner empty state when there's nothing to recover.
+The Presets tab now uses styled, dark-themed scrollable rows with highlight-on-selection instead of the plain OS-default listbox.
+Settings tabs (General, DreamClass, Presets) now have spacer rows so content doesn't float in the middle of a lot of empty space.
+Token button heights and column widths in the Channels tab are now consistent.
+In the Schedule tab, time slots that only have a Family Center class (no Chapel class) now span the full width of the card with no divider down the middle.
+General Settings now includes a manual "Check for Updates" button that can read a hosted version.json file (no auto-checking and no auto-install yet).
