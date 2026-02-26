@@ -1,11 +1,11 @@
-SLS_ROBUSTER v1.5.1
+SLS_ROBUSTER v1.5.2
 -------------------
 
-Under the Hood
+Bug Fixes
 
-Update workflow test release. Validates the end-to-end in-app auto-update flow,
-including download, extraction, and relaunch via the "Check for Updates" button.
+Fixed: Window no longer launches at a locked, non-resizable size. On some systems
+the fixed 700x980 pixel window appeared too small to use. The window now opens at
+the same default size (700x980) but can be freely resized larger by the user. The
+minimum size is determined by the actual content layout so it adapts per system.
 
-Fixed: In-app updater now automatically forward-fills any new keys from the
-bundled app_config.json into the user's installed config on every launch,
-so settings added in newer versions reach existing installs without manual editing.
+---
