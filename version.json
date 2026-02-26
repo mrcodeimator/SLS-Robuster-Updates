@@ -1,9 +1,9 @@
 {
   "app_name": "SLS_ROBUSTER",
-  "latest_version": "1.5.1",
-  "version_code": 10501,
+  "latest_version": "1.5.2",
+  "version_code": 10502,
   "release_date": "2026-02-26",
-  "download_url_macos": "https://github.com/mrcodeimator/SLS-Robuster-Updates/releases/download/v1.5.1/SLS_ROBUSTER_v1.5.1.zip",
+  "download_url_macos": "https://github.com/mrcodeimator/SLS-Robuster-Updates/releases/download/v1.5.2/SLS_ROBUSTER_v1.5.2.zip",
   "changelog_url": "https://raw.githubusercontent.com/mrcodeimator/SLS-Robuster-Updates/refs/heads/main/CHANGELOG.txt",
   "notes": "Latest update available."
 }
