@@ -1,13 +1,20 @@
-SLS_ROBUSTER v1.5.3
+SLS_ROBUSTER v1.5.4
 -------------------
 
 Visual & UI Changes
 
-The window title bar now shows "Robuster" instead of the raw filename. Since the
-app installs itself in-place on update, the filename on disk no longer changes with
-each version, so the title would have been misleading.
+The Schedule tab has been completely redesigned. Classes are now shown on a
+vertical timeline from 8 AM to 5 PM, with each chip placed at its actual start
+time and sized proportionally to its duration. This replaces the old slot-card
+grouping which broke whenever a class spanned two periods.
 
-A small version badge (e.g. "v1.5.3") now appears in the bottom-right corner of
-the window, so users can always see which version is running.
+Family Center and Chapel classes appear in side-by-side columns so you can see
+both locations at a glance. When a time slot has only a Family Center class
+(no overlapping Chapel class), its chip automatically spans both columns and
+displays a "Combined" badge.
+
+Faint horizontal grid lines appear every 15 minutes across the timeline to make
+time alignment easy to read at a glance. Hour boundaries are slightly more
+visible than the in-between markers.
 
 ---
