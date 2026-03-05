@@ -1,20 +1,16 @@
-SLS_ROBUSTER v1.5.4
--------------------
+SLS_ROBUSTER v1.6
+-----------------
 
-Visual & UI Changes
+Under the Hood
 
-The Schedule tab has been completely redesigned. Classes are now shown on a
-vertical timeline from 8 AM to 5 PM, with each chip placed at its actual start
-time and sized proportionally to its duration. This replaces the old slot-card
-grouping which broke whenever a class spanned two periods.
+Introduced SLS_Launcher — a small companion app that permanently solves the
+macOS Gatekeeper block on auto-updates. After approving the launcher once in
+System Settings > Privacy & Security, all future updates install and relaunch
+automatically with no further prompts.
 
-Family Center and Chapel classes appear in side-by-side columns so you can see
-both locations at a glance. When a time slot has only a Family Center class
-(no overlapping Chapel class), its chip automatically spans both columns and
-displays a "Combined" badge.
-
-Faint horizontal grid lines appear every 15 minutes across the timeline to make
-time alignment easy to read at a glance. Hour boundaries are slightly more
-visible than the in-between markers.
+The main app bundle is now always named SLS_ROBUSTER.app on disk (no version
+number in the filename). The version badge inside the app continues to show the
+exact version. This stable name is what allows the launcher to find and open the
+correct app after each update.
 
 ---
