@@ -1,16 +1,17 @@
-SLS_ROBUSTER v1.6
------------------
+SLS_ROBUSTER v1.6.1
+-------------------
 
-Under the Hood
+Visual & UI Changes
 
-Introduced SLS_Launcher — a small companion app that permanently solves the
-macOS Gatekeeper block on auto-updates. After approving the launcher once in
-System Settings > Privacy & Security, all future updates install and relaunch
-automatically with no further prompts.
+The Stream Info tab now shows Year 1 and Year 2 results side by side instead of
+stacked vertically, so both channels are visible at a glance without scrolling.
 
-The main app bundle is now always named SLS_ROBUSTER.app on disk (no version
-number in the filename). The version badge inside the app continues to show the
-exact version. This stable name is what allows the launcher to find and open the
-correct app after each update.
+The Apply Change button in the Title + Archive tab now shows exactly which
+channels are targeted — for example, "Applying to 'SLS Year 1' and 'SLS Year 2'"
+— and updates live as you check or uncheck channels. Shows "No channels
+selected" if none are active.
+
+The Activity Log now has a collapse toggle (▲/▼) in its header bar so you can
+tuck it away mid-session without going into Settings.
 
 ---
