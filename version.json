@@ -1,9 +1,11 @@
 {
   "app_name": "SLS_ROBUSTER",
-  "latest_version": "1.6.1",
-  "version_code": 10601,
-  "release_date": "2026-05-14",
-  "download_url_macos": "https://github.com/mrcodeimator/SLS-Robuster-Updates/releases/download/v1.6.1/SLS_ROBUSTER.py",
+  "latest_version": "2.1.0",
+  "version_code": 21000,
+  "release_date": "2026-08-14",
+  "download_url": "https://github.com/mrcodeimator/SLS-ROBUSTER-V2/releases/tag/v2.1.0",
+  "download_url_macos": "https://github.com/mrcodeimator/SLS-ROBUSTER-V2/releases/download/v2.1.0/SLS_ROBUSTER-macos-arm64.zip",
+  "info_url": "https://github.com/mrcodeimator/SLS-ROBUSTER-V2/releases/tag/v2.1.0",
   "changelog_url": "https://raw.githubusercontent.com/mrcodeimator/SLS-Robuster-Updates/refs/heads/main/CHANGELOG.txt",
-  "notes": "Latest update available."
+  "notes": "Settings Channels chips and playlist picker, schedule date jump, and updated app icon. Download the zip, unzip, drag SLS_ROBUSTER.app to Applications."
 }

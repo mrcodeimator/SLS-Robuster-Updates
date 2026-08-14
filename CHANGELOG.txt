@@ -1,3 +1,24 @@
+SLS_ROBUSTER v2.1.0
+-------------------
+
+Visual & UI Changes
+
+Settings → Channels now uses compact chips (display name, token ✓/✗, Show in
+Monitor) instead of full-width cards. Click a chip to edit that channel.
+Playlist is a dropdown of that channel's YouTube playlists instead of a typed
+playlist ID. Remove sits at the bottom of the edit form and asks for
+confirmation first.
+
+The Schedule tab date is clickable and opens a calendar so you can jump to
+any day, not just step one day at a time.
+
+Updated the app icon.
+
+Download the zip from GitHub Releases, unzip, and drag SLS_ROBUSTER.app to
+Applications.
+
+---
+
 SLS_ROBUSTER v1.6.1
 -------------------
 
