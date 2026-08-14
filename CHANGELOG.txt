@@ -1,3 +1,17 @@
+SLS_ROBUSTER v2.2.0
+-------------------
+
+Under the Hood
+
+Settings → General → Check for Updates now downloads the Mac app zip from
+the public SLS-Robuster-Updates GitHub Releases, stages a replacement for
+SLS_ROBUSTER.app, and asks you to restart. The same flow is used by the
+“Update Now” banner after launch. Settings and YouTube sign-in stay in
+~/Library/Application Support/SLSRobuster/. First install of 2.2.0 is still
+manual; later versions can swap in-place.
+
+---
+
 SLS_ROBUSTER v2.1.0
 -------------------
 
@@ -14,8 +28,66 @@ any day, not just step one day at a time.
 
 Updated the app icon.
 
-Download the zip from GitHub Releases, unzip, and drag SLS_ROBUSTER.app to
-Applications.
+---
+
+SLS_ROBUSTER v2.0.0
+-------------------
+
+Under the Hood
+
+First V2 Mac release as a double-clickable SLS_ROBUSTER.app (no Python install
+needed). Download the zip from GitHub Releases, unzip, and drag the app to
+Applications. Settings and OAuth tokens still live in
+~/Library/Application Support/SLSRobuster/. Rebuild instructions: docs/BUILD.md.
+
+Visual & UI Changes
+
+PySide6 desktop redesign with polished dark UI, sidebar navigation, and
+activity log. Settings → Channels edit flow no longer freezes the window when
+opening or saving channel details.
+
+---
+
+SLS_ROBUSTER v1.6.3
+-------------------
+
+Visual & UI Changes
+
+The Channels section of Settings has been completely redesigned. Instead of a
+spreadsheet-style table with a separate form below, each channel now appears as
+a card showing its label and display name. A "Show in Monitor" toggle sits
+directly on each card so you can flip it without opening anything.
+
+Clicking "Edit Details" on a card opens a focused popup for that channel. Inside
+you can update any field — label, name, channel ID, playlist ID, thumbnail
+template — and manage the OAuth token (sign in, re-auth, or delete) all in one
+place. A "Remove Channel" button is also in the popup. Each channel saves
+independently so changes are applied immediately without affecting other channels.
+
+An "Add Channel" button at the bottom of the tab opens the same popup in
+new-channel mode.
+
+---
+
+SLS_ROBUSTER v1.6.2
+-------------------
+
+Under the Hood
+
+The app now installs into its own dedicated folder (/Applications/SLS Robuster/)
+instead of placing files loosely in /Applications/. This keeps things tidy on
+shared computers and reduces the risk of files being accidentally moved or deleted.
+
+An Uninstall script is included in the migration package to cleanly remove the
+app and optionally wipe saved settings and login tokens.
+
+Visual & UI Changes
+
+The Settings popup has been reorganized. General settings are now grouped under
+labeled sections (Startup, Display, Advanced) so they are easier to scan. The
+current app version and Check for Updates button now appear together in a
+dedicated Version section. The Channels table now has a horizontal scrollbar.
+Status messages from Apply and Update Check now share a single line.
 
 ---
 
@@ -36,3 +108,119 @@ The Activity Log now has a collapse toggle (▲/▼) in its header bar so you ca
 tuck it away mid-session without going into Settings.
 
 ---
+
+SLS_ROBUSTER v1.6
+-----------------
+
+Under the Hood
+
+Introduced SLS_Launcher — a small companion app that permanently solves the
+macOS Gatekeeper block on auto-updates. After approving the launcher once in
+System Settings > Privacy & Security, all future updates install and relaunch
+automatically with no further prompts.
+
+The main app bundle is now always named SLS_ROBUSTER.app on disk (no version
+number in the filename). The version badge inside the app continues to show the
+exact version. This stable name is what allows the launcher to find and open the
+correct app after each update.
+
+---
+
+SLS_ROBUSTER v1.5.4
+-------------------
+
+Visual & UI Changes
+
+The Schedule tab has been completely redesigned. Classes are now shown on a
+vertical timeline from 8 AM to 5 PM, with each chip placed at its actual start
+time and sized proportionally to its duration. This replaces the old slot-card
+grouping which broke whenever a class spanned two periods.
+
+Family Center and Chapel classes appear in side-by-side columns so you can see
+both locations at a glance. When a time slot has only a Family Center class
+(no overlapping Chapel class), its chip automatically spans both columns and
+displays a "Combined" badge.
+
+Faint horizontal grid lines appear every 15 minutes across the timeline to make
+time alignment easy to read at a glance. Hour boundaries are slightly more
+visible than the in-between markers.
+
+---
+
+SLS_ROBUSTER v1.5.3
+-------------------
+
+Visual & UI Changes
+
+The window title bar now shows "Robuster" instead of the raw filename. Since the
+app installs itself in-place on update, the filename on disk no longer changes with
+each version, so the title would have been misleading.
+
+A small version badge (e.g. "v1.5.3") now appears in the bottom-right corner of
+the window, so users can always see which version is running.
+
+---
+
+SLS_ROBUSTER v1.5.2
+-------------------
+
+Bug Fixes
+
+Fixed: Window no longer launches at a locked, non-resizable size. On some systems
+the fixed 700x980 pixel window appeared too small to use. The window now opens at
+the same default size (700x980) but can be freely resized larger by the user. The
+minimum size is determined by the actual content layout so it adapts per system.
+
+---
+
+SLS_ROBUSTER v1.5.1
+-------------------
+
+Under the Hood
+
+Update workflow test release. Validates the end-to-end in-app auto-update flow,
+including download, extraction, and relaunch via the "Check for Updates" button.
+
+Fixed: In-app updater now automatically forward-fills any new keys from the
+bundled app_config.json into the user's installed config on every launch,
+so settings added in newer versions reach existing installs without manual editing.
+
+---
+
+SLS_ROBUSTER v1.5
+-----------------
+
+Bug Fixes
+
+Fixed a crash that happened because the app was trying to use a tab feature that the UI library doesn't actually support.
+Fixed another minor crash related to button sizing inside tabs.
+The date dropdown now always shows today's date at the top, instead of sorting everything alphabetically (which buried today's date in the middle).
+Cleaned up some sloppy logic that was trying to detect what type of operation was happening by checking partial text matches — it now checks for exact operation names instead, which is more accurate.
+Removed a redundant block of code that was looking up recent uploads twice when it only needed to do it once.
+
+Under the Hood
+
+Version number and file names updated to v1.5.
+The app now reads channel IDs and your client secret filename from a config file (app_config.json) instead of having them hardcoded in the source code — easier to configure without touching the code.
+When your YouTube login token expires, the app now tries to silently refresh it in the background before asking you to log in again.
+Errors that were previously swallowed silently now get logged as warnings so you can actually see what went wrong.
+App startup code was reorganized so the window-building logic is split into clearly labeled sections (header, status bar, tabs, console) instead of one giant block.
+Channel list management was cleaned up so you no longer need to restart the app after changing your channel settings.
+Duplicate-removal logic was consolidated into one shared helper function.
+
+Visual & UI Changes
+
+Colors, fonts, and spacing now use shared named constants throughout the app, so the styling is consistent everywhere.
+Added reusable builder functions for dropdowns and text fields to cut down on repeated styling code.
+Fonts are now named and defined once instead of being created inline every time they're used.
+New: The Title + Archive tab can now auto-generate a thumbnail preview (1280×720) using your class title and subtitle, and upload it to the stream when you hit Apply Change.
+Stream Info tab rows (Video ID, URL, Title, Start Time) now have a consistent pill-style visual treatment.
+The status line in the Stream Info tab is now in a dedicated framed area so "Idle" and "Done" look intentional rather than like leftover text.
+The "What's New?" button in the header has been renamed to "Updates" and resized to match the Settings gear button.
+The Apply Change button is now styled as the primary action (blue, larger, rounded), and Recover Missed Streams is styled as secondary.
+The Recover Missed Streams popup now shows a cleaner empty state when there's nothing to recover.
+The Presets tab now uses styled, dark-themed scrollable rows with highlight-on-selection instead of the plain OS-default listbox.
+Settings tabs (General, DreamClass, Presets) now have spacer rows so content doesn't float in the middle of a lot of empty space.
+Token button heights and column widths in the Channels tab are now consistent.
+In the Schedule tab, time slots that only have a Family Center class (no Chapel class) now span the full width of the card with no divider down the middle.
+General Settings now includes a manual "Check for Updates" button that can read a hosted version.json file (no auto-checking and no auto-install yet).

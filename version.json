@@ -1,11 +1,11 @@
 {
   "app_name": "SLS_ROBUSTER",
-  "latest_version": "2.1.0",
-  "version_code": 21000,
+  "latest_version": "2.2.0",
+  "version_code": 22000,
   "release_date": "2026-08-14",
-  "download_url": "https://github.com/mrcodeimator/SLS-ROBUSTER-V2/releases/tag/v2.1.0",
-  "download_url_macos": "https://github.com/mrcodeimator/SLS-ROBUSTER-V2/releases/download/v2.1.0/SLS_ROBUSTER-macos-arm64.zip",
-  "info_url": "https://github.com/mrcodeimator/SLS-ROBUSTER-V2/releases/tag/v2.1.0",
+  "download_url": "https://github.com/mrcodeimator/SLS-Robuster-Updates/releases/tag/v2.2.0",
+  "download_url_macos": "https://github.com/mrcodeimator/SLS-Robuster-Updates/releases/download/v2.2.0/SLS_ROBUSTER-macos-arm64.zip",
+  "info_url": "https://github.com/mrcodeimator/SLS-Robuster-Updates/releases/tag/v2.2.0",
   "changelog_url": "https://raw.githubusercontent.com/mrcodeimator/SLS-Robuster-Updates/refs/heads/main/CHANGELOG.txt",
-  "notes": "Settings Channels chips and playlist picker, schedule date jump, and updated app icon. Download the zip, unzip, drag SLS_ROBUSTER.app to Applications."
+  "notes": "In-app updater: Check for Updates downloads the Mac zip, replaces SLS_ROBUSTER.app, and prompts you to restart. First 2.2.0 install is still unzip and drag to Applications."
 }
